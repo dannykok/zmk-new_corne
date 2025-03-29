@@ -50,6 +50,15 @@
         tap-ms = <100>;
     };
 
+    macros {
+        ctrl_ww: ctrl_ww {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(W) &kp W>;
+            label = "CTRL_WW";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -87,13 +96,13 @@
             label = "NUMBER";
         };
 
-        func_layer {
-            display-name = "Fn";
+        arrow_layer {
+            display-name = "ARROW";
             bindings = <
-&trans  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5                                &mmv MOVE_UP                     &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &trans  &trans  &trans  &trans   &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans  &trans  &trans  &trans  &trans   &trans
-                        &trans  &trans  &trans                                                                 &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &ctrl_ww                            &mmv MOVE_UP                     &trans  &kp HOME  &kp UP    &kp END    &kp PRINTSCREEN  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &trans           &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans                    &mmv MOVE_DOWN                   &trans  &trans    &trans    &trans     &trans           &trans
+                        &trans  &trans  &trans                                                               &trans  &trans    &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
@@ -102,7 +111,7 @@
         system_layer {
             display-name = "SYSTEM";
             bindings = <
-&trans  &trans           &trans          &trans        &trans        &trans                                         &mmv MOVE_UP                     &trans           &trans           &trans           &trans           &trans       &trans
+&trans  &kp F1           &kp F2          &kp F3        &kp F4        &kp F5                                         &mmv MOVE_UP                     &kp F6           &kp F7           &kp F8           &kp F9           &kp F10      &kp F11
 &trans  &bt BT_CLR_ALL   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3                   &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &kp LEFT         &kp DOWN         &kp UP           &kp RIGHT        &sys_reset   &kp PG_UP
 &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &out OUT_USB  &out OUT_BLE  &rgb_ug RGB_EFF  &kp C_MUTE                    &mmv MOVE_DOWN                   &rgb_ug RGB_EFR  &rgb_ug RGB_SPI  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &bootloader  &kp PG_DN
                                          &trans        &trans        &trans                                                                          &trans           &trans           &trans
