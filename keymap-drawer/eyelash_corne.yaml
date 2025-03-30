@@ -45,7 +45,7 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - LGUI
   - SYMBOL
-  - {t: '$$mdi:keyboard-space$$', h: ARROW}
+  - ARROW
   - {t: '$$mdi:keyboard-space$$', h: SYMBOL}
   - NUMBER
   - $$mdi:apple-keyboard-option$$
