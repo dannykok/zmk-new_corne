@@ -28,7 +28,7 @@ layers:
   - K
   - L
   - {t: ;, s: ':'}
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '''', s: '"'}
   - '&td0'
   - Z
   - X
@@ -42,7 +42,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:apple-keyboard-shift$$'}
   - $$mdi:apple-keyboard-control$$
   - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:apple-keyboard-command$$'}
   - SYMBOL
