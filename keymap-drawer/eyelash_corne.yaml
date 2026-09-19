@@ -224,7 +224,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - $$mdi:arrow-right-bold$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - PG UP
+  - F12
   - {t: '$$mdi:transfer$$', type: trans}
   - RGB OFF
   - RGB ON
